@@ -1,11 +1,11 @@
 <?php
 session_start();
-require 'db.php';  // Ensure your db.php file is correctly set up to connect to the database
+require 'db.php';  // db connection
 
 header('Content-Type: application/json');  // Ensures the output is treated as JSON
 
 if (!isset($_SESSION['admin_user'])) {
-    http_response_code(403);  // Proper HTTP response for unauthorized access
+    http_response_code(403);  // Proper response for unauthorized access
     echo json_encode(['message' => 'Unauthorized access.']);
     exit;
 }
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
     }
     $conn->close();
 } else {
-    http_response_code(405);  // Method Not Allowed
+    http_response_code(405);  
     echo json_encode(['message' => 'Invalid request method.']);
 }
 ?>
