@@ -1,7 +1,7 @@
 <?php
 session_start(); // Start the session.
 
-// Unset all of the session variables.
+// Unset session variables.
 $_SESSION = array();
 
 // If it's desired to kill the session, also delete the session cookie.
@@ -13,7 +13,7 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Finally, destroy the session.
+// Destroy the session.
 session_destroy();
 ?>
 
@@ -55,7 +55,6 @@ session_destroy();
             showConfirmButton: false,
             timer: 3000
         }).then(() => {
-            // Redirect to the home page or login page after the alert
             window.location.href = 'index.php';
         });
     </script>
