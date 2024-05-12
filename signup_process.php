@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';  // Ensure your db.php file is properly set up to connect to the database
+require 'db.php';  
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
