@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
     <style>
     #footer {
     position: fixed;
@@ -133,7 +131,7 @@
             	showConfirmButton: false,
             	timer: 3000
        			 });
-                expInput.focus(); // Focus on the expiration date input
+                expInput.focus(); 
             }
         });
     </script>
