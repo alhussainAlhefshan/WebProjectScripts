@@ -1,15 +1,15 @@
 <?php
 session_start();
-require 'db.php'; // Ensure this file exists and handles database connection
+require 'db.php'; // DB connection
 
 if (!isset($_SESSION['user'])) {
-    header('Location: login.html'); // Redirect to login if not logged in
+    header('Location: login.html');
     exit();
 }
 
-$username = $_SESSION['user']; // Username of the logged-in user
+$username = $_SESSION['user']; 
 
-// Fetch user's orders from the database
+// retrieve user's orders from the database
 $sql = "SELECT OrderID, TotalAmount, Details FROM orders WHERE Username = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $username);
@@ -21,7 +21,6 @@ $num_orders = $result->num_rows; // number of orders
 
 
 if ($result->num_rows == 0) {
-    // No orders found, prepare to show alert and redirect
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
     echo '<script>
             Swal.fire({
@@ -34,7 +33,7 @@ if ($result->num_rows == 0) {
                 window.location.href = "index.php";
             });
           </script>';
-    exit(); // Stop further execution if no orders
+    exit(); 
 }
 ?>
 
