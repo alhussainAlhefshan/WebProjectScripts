@@ -76,11 +76,11 @@
             <button type="submit">Login</button>
         </form>
         <script>
-            // Check for error messages in the URL query string
+            // Check for error messages in the URL query string for debugging 
             const urlParams = new URLSearchParams(window.location.search);
             const error = urlParams.get('error');
             if (error) {
-                alert(decodeURIComponent(error)); // Alert the error message
+                alert(decodeURIComponent(error)); 
             }
         </script>
     </div>
