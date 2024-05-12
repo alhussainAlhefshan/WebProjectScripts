@@ -1,13 +1,12 @@
 <?php
 session_start();
-require 'db.php';  // Ensure your database connection is properly set up
+require 'db.php';  // DB connection
 
 if (!isset($_SESSION['admin_user'])) {
-    header('Location: admin_login.html?error=1'); // Redirect with a generic error message
+    header('Location: admin_login.html?error=1'); 
     exit();
 }
 
-// Fetch all orders from the database
 $orderQuery = "SELECT OrderID, Username, TotalAmount, Details, OrderDate FROM orders";
 $orderResult = $conn->query($orderQuery);
 if ($orderResult === false) {
@@ -23,7 +22,6 @@ if ($orderResult === false) {
     <title>TUWAIQ - Admin Panel</title>
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <style>
         #footer {
@@ -149,7 +147,7 @@ if ($orderResult === false) {
                 </tr>
             </thead>
             <tbody id="userList">
-                <!-- User list will be populated dynamically -->
+                <!-- User list dynamically -->
             </tbody>
         </table>
 
@@ -204,7 +202,6 @@ if ($orderResult === false) {
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Vendor JS Files -->
 <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
