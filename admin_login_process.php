@@ -35,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 } else {
-    // Redirect to the login page if the request method is not POST
     header('Location: admin_login.html');
     exit();
 }
